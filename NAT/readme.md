@@ -43,6 +43,7 @@ Router(config-if)#interface fa0/0
 Router(config-if)#ip nat inside
 ```
 - now we need to add a static route from router 1 to 2
+we used 0.0.0.0 because we dont know what IP will be coming to us 
 ```
 Router(config)#ip route 0.0.0.0 0.0.0.0 se0/3/0
 ```
