@@ -26,13 +26,13 @@ once, the router is configured, the connections turn green
 
 5. Configure SMTP Server <br>
 Click on the Server -> Services -> EMAIL -> Turn SMTP and POP3 On <br>
-- Domain Name = <domain>.com, Press Set
+- Domain Name = <OUR_DOMAIN>.com, Press Set
 - Add users by adding their usernames and passwords and clicking on +
   ![image](https://user-images.githubusercontent.com/84095994/236683282-26321ef3-272e-45d9-a07c-db84b04f64bb.png)
 
 6. Click on PC0 -> Desktop -> Email
   - Your name = <OUR_NAME>
-  - Email Address = <username>@<domain>.com
+  - Email Address = <OUR_USERNAME>@<OUR_DOMAIN>.com
   - Incoming Mail Server = Outgoing Mail Server = <MAIL_SERVER_IP_ADDRESS>
   - Enter the username and password in the Logon Information, press Save
   ![image](https://user-images.githubusercontent.com/84095994/236683444-a354e0b1-6bbb-47b8-adf6-0ec67c98ec93.png)
