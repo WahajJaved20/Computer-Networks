@@ -3,7 +3,7 @@
 
 ![image](https://user-images.githubusercontent.com/84095994/236680398-9a438c71-c071-45f5-ae5c-dcca5d67afa1.png)
 
-2. Configure Router
+2. Configure Router <br>
 if we hover over the wire connecting router and the switch, it shows the interface
 ```bash
 en
@@ -24,7 +24,7 @@ once, the router is configured, the connections turn green
 3. Assign relevant IPs to both the PCs and the Web Server
 4. Assign Gateways to the PCs and the Web Server (The Gateway Address is the interface IP of the router)
 
-5. Configure HTTP Server
+5. Configure HTTP Server <br>
 Click on the Server -> Services -> HTTP -> Turn HTTP and HTTPS on
 
 ![image](https://user-images.githubusercontent.com/84095994/236680784-7c05e508-a76c-4a8f-b45e-5cca4893fb40.png)
