@@ -66,3 +66,66 @@ ping 172.168.0.2
 
 The PC is successfully pinged
 
+# RIP(Dynamic) Routing Configuration in Cisco Packet Tracer
+1. Implement the Topology using Same serial connections between routers
+
+![image](https://user-images.githubusercontent.com/84095994/236690590-16a85784-b16d-4bdb-bad0-d8932459fe99.png)
+
+2. Configure Routers <br>
+if we hover over the wire connecting router and the switch, it shows the interface
+- In Router 1
+```bash
+en
+config t
+interface gig0/0
+// ip address <IP_ADDRESS> <SUBNET_MASK>
+ip address 192.168.0.1 255.255.255.0
+no shutdown
+interface se0/1/0
+ip address 182.168.0.1 255.255.0.0
+no shutdown
+exit
+```
+- In Router 2
+```bash
+en
+config t
+interface gig0/0
+// ip address <IP_ADDRESS> <SUBNET_MASK>
+ip address 172.168.0.1 255.255.0.0
+no shutdown
+interface se0/1/0
+ip address 182.168.0.2 255.255.0.0
+no shutdown
+exit
+```
+once, the router is configured, the connections turn green
+
+![image](https://user-images.githubusercontent.com/84095994/236690808-3345890c-5cd8-48e2-b2c2-12e847d715b0.png)
+
+3. To Configure RIP Routing
+- Click on Router
+```
+router rip
+network <OWN_NETWORK_ADDRESS>
+network <SERIAL_CONNECTION_NETWORK_ADDRESS>
+// in router 1
+network 192.168.0.0
+network 182.168.0.0
+//in router 2
+network 172.168.0.0
+network 182.168.0.0
+```
+4.  Assign Gateway Addresses and IPs to all PCs
+
+and the rip routing is done
+## Testing
+To Test Connectivity, ping the other PC
+- Open Command Prompt in PC0
+```
+ping 172.168.0.2
+```
+
+![image](https://user-images.githubusercontent.com/84095994/236693273-f18f4a0a-79f4-48a6-acba-3c0d5e40aaa8.png)
+
+
