@@ -128,4 +128,66 @@ ping 172.168.0.2
 
 ![image](https://user-images.githubusercontent.com/84095994/236693273-f18f4a0a-79f4-48a6-acba-3c0d5e40aaa8.png)
 
+# OSPF Routing Configuration in Cisco Packet Tracer
+ ## wildcard mask = 255.255.255.255 - subnet
+1. Implement the Topology
+
+![image](https://user-images.githubusercontent.com/84095994/236693482-ccc98dd4-39c2-4342-96e8-70b2655d7f49.png)
+
+2. Configure Routers <br>
+if we hover over the wire connecting router and the switch, it shows the interface
+- In Router 1
+```bash
+en
+config t
+interface gig0/0
+// ip address <IP_ADDRESS> <SUBNET_MASK>
+ip address 192.168.0.1 255.255.255.0
+no shutdown
+interface se0/1/0
+ip address 182.168.0.1 255.255.0.0
+no shutdown
+exit
+```
+- In Router 2
+```bash
+en
+config t
+interface gig0/0
+// ip address <IP_ADDRESS> <SUBNET_MASK>
+ip address 172.168.0.1 255.255.0.0
+no shutdown
+interface se0/1/0
+ip address 182.168.0.2 255.255.0.0
+no shutdown
+exit
+```
+once, the router is configured, the connections turn green
+
+![image](https://user-images.githubusercontent.com/84095994/236693627-8cc6f21b-0a10-4e17-ad83-0642c0217e1c.png)
+
+3. To Configure RIP Routing
+- Click on Router
+```
+router ospf1
+network <OWN_NETWORK_ADDRESS> <WILDCARD_MASK> area <AREA #>
+network <SERIAL_CONNECTION_NETWORK_ADDRESS> <WILDCARD_MASK> area <AREA #>
+// in router 1
+network 192.168.0.0 0.0.0.255 area 0
+network 182.168.0.0 0.0.255.255 area 0
+//in router 2
+network 172.168.0.0 0.0.255.255 area 0
+network 182.168.0.0 0.0.255.255 area 0
+```
+4.  Assign Gateway Addresses and IPs to all PCs
+
+and the ospf routing is done
+## Testing
+To Test Connectivity, ping the other PC
+- Open Command Prompt in PC0
+```
+ping 172.168.0.2
+```
+
+![image](https://user-images.githubusercontent.com/84095994/236693904-3967c7cc-32bb-4cca-9174-56b2e983f191.png)
 
