@@ -48,9 +48,9 @@ once, the router is configured, the connections turn green
 ```
 // ip route <TARGET_NETWORK_ADDRESS> <SUBNET_MASK> <NEXT_HOP_ROUTER_CONNECTED_INTERFACE_PORT>
 // in router 1
-ip route 192.168.0.0 255.255.0.0 se0/1/0
-//in router 2
 ip route 172.168.0.0 255.255.0.0 se0/1/0
+//in router 2
+ip route 192.168.0.0 255.255.0.0 se0/1/0
 ```
 4.  Assign Gateway Addresses and IPs to all PCs
 
