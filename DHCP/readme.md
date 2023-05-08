@@ -52,9 +52,13 @@ Click on Server -> Services -> DHCP -> Turn it on <br>
 ```
 Router>en
 Router#config t
+// ip dhcp pool <POOL_NAME>
 Router(config)#ip dhcp pool leftPool
+// network <NETWORK_ADDRESS> <SUBNET_MASK>
 Router(dhcp-config)#network 192.168.0.0 255.255.0.0
+// default-router <ROUTER_IP_ADDRESS>
 Router(dhcp-config)#default-router 192.168.0.1
+// dns-server <DNS_SERVER_IP>
 Router(dhcp-config)#dns-server 172.168.0.2
 Router(dhcp-config)#exit
 Router(config)#ip dhcp excluded-address 192.168.0.1
